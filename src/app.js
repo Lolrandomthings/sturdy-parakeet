@@ -57,4 +57,12 @@ document.addEventListener('DOMContentLoaded', function() {
         this.classList.remove('animate__heartBeat');
     });
 
+    document.getElementById('saveBtn').addEventListener('click', function() {
+        this.classList.add('animate__heartBeat');
+        
+    });
+
+    document.getElementById('saveBtn').addEventListener('animationend', function() {
+        this.classList.remove('animate__heartBeat');
+    });
 });
