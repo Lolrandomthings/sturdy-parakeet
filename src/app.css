@@ -6,6 +6,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    background-color: #302F4d;
 }
 
 .gallery-container {
@@ -25,11 +26,23 @@ body {
 
 .navigation {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 0%;
+    background-color: #302F4d;
+    height: 17vh;
 }
 
 button {
+    background-color: #75DBCD;
     padding: 10px 20px;
     margin: 0 10px;
     cursor: pointer;
+}
+.btnonly{
+    margin-top: 1%;
+}
+.HeartBtn{
+    background-color: #EEC0C6;
+}
+.SaveBtn{
+    background-color: #C9DBBA;
 }

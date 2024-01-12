@@ -20,6 +20,28 @@ document.addEventListener('DOMContentLoaded', function() {
         if ( currentPhotoIndex > photos.length - 1) currentPhotoIndex = 0;
 
         currentPhoto.src = photos[currentPhotoIndex];
+    } 
+
+    function changePhoto2(newIndex) {
+        currentPhotoIndex = newIndex;
+        if (currentPhotoIndex < 0) currentPhotoIndex = photos.length - 1;
+        if ( currentPhotoIndex > photos.length - 1) currentPhotoIndex = 0;
+
+        currentPhoto.style.setProperty('--animate-duration', '2.0s');
+
+        photoContainer.classList.add('animate__animated', 'animate__fadeOut');
+
+        photoContainer.addEventListener('animationend', function() {
+            photoContainer.classList.remove('animate__animated', 'animate__fadeOut');
+
+            photoContainer.classList.add('animate__animated','animate__fadeIn');
+
+            currentPhoto.src = photos[currentPhotoIndex];
+
+            photoContainer.addEventListener('animationend', function() {
+                photoContainer.classList.remove('animateanimated','animatefadeIn');
+            }, {once: true});
+        }, {once: true});
     }
 
     document.getElementById('nextBtn').addEventListener('click', function() {
